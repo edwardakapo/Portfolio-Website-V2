@@ -326,7 +326,7 @@ export default function SearchProject(){
               </Select>
             </div>
           <ScrollArea className="h-[700px] w-fit mx-auto">
-            <ul className="max-w-[750px] flex flex-wrap justify-between mx-3">
+            <ul className="max-w-[750px] flex flex-wrap justify-between mx-3 p-1">
                 {sortProjects(
                 dummyData
                   .filter((project) => (
