@@ -2,19 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectsSection from '@/components/ProjectsSection.astro';
 import '@/styles/globals.css';
+import GithubIntegration from '@/components/GithubIntegration.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<ProjectsSection />
+		<GithubIntegration />
 	</main>
 </Layout>
 
 <style>
 	main {
 		margin: auto;
-		padding: 1rem;
-		max-width: 900px;
+		/* padding: 1rem; */
+		max-width: 850px;
 		font-family: "Arimo";
+		display: flex;
+		flex-direction: column;
+		row-gap: 150px;
 	}
 </style>
