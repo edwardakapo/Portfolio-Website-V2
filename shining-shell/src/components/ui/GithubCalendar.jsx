@@ -4,9 +4,14 @@ import 'react-tooltip/dist/react-tooltip.css';
 import React from 'react';
 
 export default function GithubCalendar(){
+    
+    const explicitTheme = {
+        dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
+      };
     return (
         <>
             <GitHubCalendar username="edwardakapo"
+            // theme={explicitTheme}
                 renderBlock={(block, activity) =>
                     React.cloneElement(block, {
                       'data-tooltip-id': 'react-tooltip',
