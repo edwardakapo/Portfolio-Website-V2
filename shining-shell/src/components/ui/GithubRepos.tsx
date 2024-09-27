@@ -80,7 +80,9 @@ useEffect (  () => {
 
             <h1> Recent Repos in here </h1> 
             <ul className="grid grid-cols-2">
-                {recentRepos.map((repo) => (
+                {recentRepos
+                .sort((a,b) => (new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()))
+                .map((repo) => (
                     <li key={repo.name} className="w-fit">
                         <GithuRepoCard {...repo}/>
                     </li>
