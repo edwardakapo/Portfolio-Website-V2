@@ -38,7 +38,7 @@ useEffect (  () => {
                 console.log(pinnedRepos)
             } else {
                 const pinned = await fetchGitHubPinnedRepos(name);
-                setPinnedRepos(cachedPinnedRepos)
+                setPinnedRepos(pinned)
                 setCachedData(`pinnedRepos_${name}`, pinned)
             }
 
@@ -48,7 +48,7 @@ useEffect (  () => {
                 setRecentRepos(cachedRecentRepos)
             } else {
                 const recent = await fetchGitHubRepos(name)
-                setRecentRepos(cachedRecentRepos)
+                setRecentRepos(recent)
                 setCachedData(`recentRepos_${name}`, recent)
             }
 
