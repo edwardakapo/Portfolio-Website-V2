@@ -12,7 +12,8 @@ export default {
     		colors: {
 				"main-highlight" : "#85E4E7",
 			    "text-highlight" : "#3EA9AC",
-				"placeholder-text" : "#505050"
+				"placeholder-text" : "#505050",
+				"focus-color" : "3EA9AC",
 			},
 			fontFamily : {
 				'noto-sans' : ['Noto Sans', 'sans-serif'],

@@ -2,8 +2,6 @@ import GitHubCalendar from 'react-github-calendar';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import React from 'react';
-import GithubRepos from './GithubRepos';
-
 export default function GithubCalendar(){
     
     const explicitTheme = {
@@ -22,7 +20,6 @@ export default function GithubCalendar(){
             />
              <ReactTooltip id="react-tooltip" />
             
-            <GithubRepos name="edwardakapo" />
         </>
     )
 }

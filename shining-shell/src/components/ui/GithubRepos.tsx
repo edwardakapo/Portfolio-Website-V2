@@ -1,49 +1,92 @@
 import { fetchGitHubPinnedRepos, fetchGitHubRepos } from "@/lib/githubApi";
 import { useState, useEffect } from "react";
 import type { Repository } from "@/lib/githubApi";
+import GithuRepoCard from "./GithubRepoCard";
 
-type PropType = {
- name : string;
+const name = "edwardakapo"
+
+
+const getCachedData = (key : string ) => {
+    console.log("GETTING CACHE")
+    const cachedData = sessionStorage.getItem(key);
+    if (cachedData) {
+        return JSON.parse(cachedData);
+    }
+    return null;
 }
 
-export default function GithubRepos({ name } : PropType)   {
+const setCachedData = (key : string, data : any) => {
+    console.log("SETTING CACHE")
+    sessionStorage.setItem(key , JSON.stringify(data))
+}
+
+export default function GithubRepos() {
 const [pinnedRepos, setPinnedRepos] = useState<Repository[]>([])
-const [repos, setRepos] = useState<Repository[]>([])
+const [recentRepos, setRecentRepos] = useState<Repository[]>([])
+const [isLoading ,setIsLoading] = useState(true)
 useEffect (  () => {
     const getGithubData = async () => {
         try {
-            const pinned = await fetchGitHubPinnedRepos(name);
-            const recentRepos = await fetchGitHubRepos(name)
-            
-            setPinnedRepos(pinned)
-            setRepos(recentRepos)
+            console.log("loading fetch request")
+            setIsLoading(true)
+            // Check cache for pinned repos data
+            const cachedPinnedRepos = getCachedData(`pinnedRepos_${name}`);
+            if (cachedPinnedRepos) {
+                // data exists in the session storage
+                setPinnedRepos(cachedPinnedRepos)
+                console.log(cachedPinnedRepos)
+                console.log(pinnedRepos)
+            } else {
+                const pinned = await fetchGitHubPinnedRepos(name);
+                setPinnedRepos(cachedPinnedRepos)
+                setCachedData(`pinnedRepos_${name}`, pinned)
+            }
+
+            // Check cache for recent repos data
+            const cachedRecentRepos = getCachedData(`recentRepos_${name}`)
+            if(cachedRecentRepos) {
+                setRecentRepos(cachedRecentRepos)
+            } else {
+                const recent = await fetchGitHubRepos(name)
+                setRecentRepos(cachedRecentRepos)
+                setCachedData(`recentRepos_${name}`, recent)
+            }
+
         }
         catch (error) {
             console.error('Error fetching Github data:' , error)
         }
-        console.log(pinnedRepos)
+        finally {
+            console.log("done loading")
+            setIsLoading(false)
+        }
     };
     getGithubData();
 }, []);
-
+    if (isLoading) {
+        return <div> Loading ...</div>
+    }
     return (
         <>
-            <h1> Pinned Repos in here </h1>
-            {pinnedRepos.map((repo) => (
-                <div key={repo.name}>
-                <a href={repo.url}>{repo.name}</a>
-                <p>{repo.description}</p>
-                <p>{repo.primaryLanguage?.name}</p>
-                </div>
-            ))}
+            <h1> Pinned Repos in here </h1> 
+            <ul className="grid grid-cols-2">
+                {pinnedRepos.map((repo) => (
+                    <li key={repo.name} className="w-fit">
+                        <GithuRepoCard {...repo}/>
+                    </li>
+                ))
+                }
+            </ul>
 
-            <h1> Recent Repos Here </h1>
-            {repos.map((repo) => (
-                <div key={repo.name}>
-                <a href={repo.url}>{repo.name}</a>
-                <p>{repo.description}</p>
-                </div>
-            ))}
+            <h1> Recent Repos in here </h1> 
+            <ul className="grid grid-cols-2">
+                {recentRepos.map((repo) => (
+                    <li key={repo.name} className="w-fit">
+                        <GithuRepoCard {...repo}/>
+                    </li>
+                ))
+                }
+            </ul>
         </>
     )
 }

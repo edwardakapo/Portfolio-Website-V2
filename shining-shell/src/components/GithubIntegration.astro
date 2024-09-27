@@ -1,5 +1,7 @@
 ---
 import GithubCalendar from "./ui/GithubCalendar"
+import GithubRepos from '@/components/ui/GithubRepos';
+
 ---
 
 <section class="">
@@ -9,5 +11,6 @@ import GithubCalendar from "./ui/GithubCalendar"
         </div>
         <div class="">
             <GithubCalendar client:only="react"/>
+            <GithubRepos client:load/>
         </div>
 </section>

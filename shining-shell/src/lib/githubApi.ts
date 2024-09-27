@@ -10,7 +10,7 @@ interface Language {
 
 export interface Repository {
     name : string;
-    description : string;
+    description : string | null;
     url : string;
     primaryLanguage? : Language;
     updatedAt: string;
@@ -39,6 +39,7 @@ export const fetchGitHubData = async (query : string): Promise<any> => {
             method : 'POST',
             headers : {
                 'Content-Type' : 'application/json',
+                Authorization : `bearer ${import.meta.env.PUBLIC_GITHUB_TOKEN}`
             },
             body : JSON.stringify({ query })
         });
