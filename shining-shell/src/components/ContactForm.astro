@@ -1,11 +1,11 @@
 ---
-
+import { MainContactForm } from "./ui/ZodHookForm";
 ---
 
 <section id="contact-form">
-    <div class="flex flex-col items-center text-center max-w-[550px] mx-auto mb-10">
+    <div class="flex flex-col items-center text-center max-w-[550px] mx-auto mb-10 gap-y-5">
         <h1 class="font-bold text-2xl"> Contact </h1>
-        <h2 class="italic text-lg">Want to work together? I thought you'd never ask!</h2>
+        <h2 class="italic text-lg text-gray-600">Want to work together? I thought you'd never ask!</h2>
         <p>
             You can get in contact with me for consultation,
              general inquiries, potential volunteer work,
@@ -14,6 +14,6 @@
         </p>
     </div>
     <div class="flex flex-col items-center">
-        form goes here
+        <MainContactForm client:visible/>
     </div>
 </section>

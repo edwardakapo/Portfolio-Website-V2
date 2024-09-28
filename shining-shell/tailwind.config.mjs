@@ -13,7 +13,7 @@ export default {
 				"main-highlight" : "#85E4E7",
 			    "text-highlight" : "#3EA9AC",
 				"placeholder-text" : "#505050",
-				"focus-color" : "3EA9AC",
+				"focus-color" : "#3EA9AC",
 			},
 			fontFamily : {
 				'noto-sans' : ['Noto Sans', 'sans-serif'],
@@ -37,7 +37,8 @@ export default {
 			  animation: {
 				fadeInScale: 'fadeInScale 0.15s ease-in-out',
 				fadeOut: 'fadeOut 1s ease-out',
-				delayedFadeOut : 'delayedFadeOut 4s ease-out forwards'
+				delayedFadeOut : 'delayedFadeOut 4s ease-out forwards',
+				'spin-slow' : 'spin 3s linear infinite',
 			  },
     	},
     },

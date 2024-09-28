@@ -10,11 +10,11 @@ import ContactForm from '@/components/ContactForm.astro';
 <Layout title="Welcome to Astro.">
 	<main>
 		<Toaster 
-			client:load
-			position="top-center"/>
+		client:load
+		position="top-center"/>
+		<ContactForm />
 		<ProjectsSection />
 		<GithubIntegration />
-		<ContactForm />
 	</main>
 </Layout>
 
