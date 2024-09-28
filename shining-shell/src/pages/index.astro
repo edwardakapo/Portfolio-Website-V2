@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectsSection from '@/components/ProjectsSection.astro';
 import '@/styles/globals.css';
-import GithubIntegration from '@/components/GithubIntegration.astro';
 import {Toaster} from 'sonner'
-import type { positionAt } from 'node_modules/astro/dist/core/errors';
+import ProjectsSection from '@/components/ProjectsSection.astro';
+import GithubIntegration from '@/components/GithubIntegration.astro';
+import ContactForm from '@/components/ContactForm.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,6 +14,7 @@ import type { positionAt } from 'node_modules/astro/dist/core/errors';
 			position="top-center"/>
 		<ProjectsSection />
 		<GithubIntegration />
+		<ContactForm />
 	</main>
 </Layout>
 

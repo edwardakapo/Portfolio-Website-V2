@@ -59,7 +59,7 @@ export default function GithuRepoCard(
                     </div>
                     <TooltipProvider>
                         <Tooltip>
-                            <TooltipTrigger>
+                            <TooltipTrigger asChild>
                             <button onClick={(e) => {
                                 e.preventDefault()
                                 e.stopPropagation()
