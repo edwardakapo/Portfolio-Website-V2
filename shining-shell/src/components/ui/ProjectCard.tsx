@@ -14,7 +14,7 @@ export default function ProjectCard(props : ProjectCard){
             <div className="py-2 w-[220px] h-[220px] border-black flex flex-col items-center hover:text-text-highlight">
                 {/* This is the project card */}
                 <img className="w-[180px] h-[160px] object-center mb-2" src={props.coverImg} />
-                <p className="text-sm w-[180px]" > {props.projectName} </p>
+                <p className="text-sm font-semibold w-[180px]" > {props.projectName} </p>
             </div>
         )
 }

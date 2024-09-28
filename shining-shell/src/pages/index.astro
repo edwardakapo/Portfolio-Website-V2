@@ -3,10 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import ProjectsSection from '@/components/ProjectsSection.astro';
 import '@/styles/globals.css';
 import GithubIntegration from '@/components/GithubIntegration.astro';
+import {Toaster} from 'sonner'
+import type { positionAt } from 'node_modules/astro/dist/core/errors';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
+		<Toaster 
+			client:load
+			position="top-center"/>
 		<ProjectsSection />
 		<GithubIntegration />
 	</main>
