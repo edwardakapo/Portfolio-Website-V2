@@ -1,0 +1,31 @@
+.card-container {
+    display: flex;
+    justify-content: space-around; /* Space cards evenly */
+    position: relative; /* For the background effect */
+  }
+  
+  .card {
+    width: 180px; /* Set a uniform width */
+    height: 250px; /* Set a uniform height */
+    background-color: #f0f0f0; /* Default background color */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 25px;
+    justify-content: center;
+    transition: width 0.6s ease-in-out ; /* Smooth transitions */
+    position: relative;
+    z-index: 1; /* Ensure card is above background */
+  }
+  
+  .card.hovered {
+    width: 250px; /* Grow width on hover */
+    z-index: 2; /* Bring hovered card to front */
+  }
+.card.non-hovered {
+    width: 160px; /* Reduce width of non-hovered cards */
+    filter: grayscale(1);
+  }
+  

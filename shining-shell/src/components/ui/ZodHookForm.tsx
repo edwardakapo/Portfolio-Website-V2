@@ -68,7 +68,7 @@ const MainContactForm = () => {
             console.error(error)
             return
         } finally {
-            // reset();
+            reset();
         }
     }
 

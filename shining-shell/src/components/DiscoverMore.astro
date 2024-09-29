@@ -1,0 +1,40 @@
+---
+import {DiscoverMoreCard} from "./ui/DicoverMoreCard"
+import '@/styles/cardhover.css'
+const discoverMoreData = [
+    {
+        title : "LinkedIn",
+        img : "/LinkedIn.png",
+        color : "#32a852",
+        url : "",
+    },
+    {
+        title : "Spotify",
+        img : "/Spotify.png",
+        color : "#32a852",
+        url : "",
+    },
+    {
+        title : "Twitter",
+        img : "/Twitter.png",
+        color : "#32a852",
+        url : "",
+    },
+
+]
+---
+
+
+
+<section id="discover-more" >
+    <div class="rounded-2xl flex flex-col items-center justify-center bg-light-bg h-[500px] w-[900px] gap-12">
+        <h1 class="text-center text-2xl font-bold tracking-wider">
+            Discover More About Me <br/>
+            <span class="text-zinc-400"> Across Other Platforms</span>
+        </h1>
+        <div class="w-[600px]">
+            <DiscoverMoreCard  data={discoverMoreData} client:idle/> 
+        </div> 
+    </div>
+
+</section>

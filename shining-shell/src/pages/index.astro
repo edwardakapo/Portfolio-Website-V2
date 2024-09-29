@@ -5,6 +5,7 @@ import {Toaster} from 'sonner'
 import ProjectsSection from '@/components/ProjectsSection.astro';
 import GithubIntegration from '@/components/GithubIntegration.astro';
 import ContactForm from '@/components/ContactForm.astro';
+import DiscoverMore from '@/components/DiscoverMore.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,9 +13,10 @@ import ContactForm from '@/components/ContactForm.astro';
 		<Toaster 
 		client:load
 		position="top-center"/>
-		<ContactForm />
 		<ProjectsSection />
 		<GithubIntegration />
+		<DiscoverMore />
+		<ContactForm />
 	</main>
 </Layout>
 
