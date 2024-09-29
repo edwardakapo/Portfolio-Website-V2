@@ -90,7 +90,7 @@ useEffect (  () => {
     }
     return (
         <div className="flex flex-col gap-y-5 w-fit h-fit">
-            <div className={` py-1 w-[855px] items-center flex flex-col gap-y-3 transition-all duration-300 ${isExpanded ? 'h-[475px]' : 'h-[206px]'} overflow-hidden`}>
+            <div className={` py-1 w-[856px] items-center flex flex-col gap-y-3 transition-all duration-300 ${isExpanded ? 'h-[475px]' : 'h-[206px]'} overflow-hidden`}>
                 <div className="place-self-end pr-0.5">
                     <Select value={selectedGrid} onValueChange={(value) => setSelectedGrid(value)}>
                         <SelectTrigger className="w-fit rounded-2xl py-1 gap-x-2 border-gray-300 h-fit text-xs font-bold tracking-wider hover:ring-2 hover:ring-gray-300">

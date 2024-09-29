@@ -16,30 +16,46 @@ type CardData = {
 const DiscoverMoreCard = ( {data} : CardData) => {
   const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
 
-
   return (
-    <div className="card-container">
+    <div className=" w-[600px] flex justify-between">
       {data.map((card, index) => (
-        <div
+        <a
         key={card.title}
         className={`card ${hoveredIndex === index ? 'hovered' : hoveredIndex !== null ? 'non-hovered' : ''}`}
-        onMouseEnter={() => setHoveredIndex(index)}
-        onMouseLeave={() => setHoveredIndex(null)}
+        href={card.url}
+        target='_blank'
+        onMouseEnter={() => {
+          setHoveredIndex(index)
+        }}
+        onMouseLeave={() => {
+          setHoveredIndex(null)
+        }}
       >
-          <img className="card-img w-[150px] h-[150px]" src={card.img}/>
+          <img className="card-img w-[140px] h-[140px]" src={card.img}/>
           <p className='text-xl font-bold tracking-wide'>{card.title}</p>
-        </div>
+        </a>
       ))}
     </div>
   );
 };
 
-const DiscoverMoreCardMobile = () =>  {
-    return (
-        <>
-        </>
-    )
+const DiscoverMoreCardMobile = ({data} : CardData) =>  {
+  return (
+    <div className=" w-[600px] flex flex-col justify-between">
+      {data.map((card) => (
+        <a
+        className='border-2 border-zinc-200 w-[240px] h-[220px] flex flex-col items-center justify-center gap-y-6 rounded-3xl bg-[#f0f0f0]'
+        key={card.title}
+        href={card.url}
+        target='_blank'
+      >
+          <img className="card-img w-[140px] h-[140px]" src={card.img}/>
+          <p className='text-xl font-bold tracking-wide'>{card.title}</p>
+        </a>
+      ))}
+    </div>
+  );
 }
 
 
-export {DiscoverMoreCard}
+export {DiscoverMoreCard,DiscoverMoreCardMobile}
