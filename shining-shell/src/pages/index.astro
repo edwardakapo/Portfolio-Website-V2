@@ -6,13 +6,16 @@ import ProjectsSection from '@/components/ProjectsSection.astro';
 import GithubIntegration from '@/components/GithubIntegration.astro';
 import ContactForm from '@/components/ContactForm.astro';
 import DiscoverMore from '@/components/DiscoverMore.astro';
+import AboutMeSection from '@/components/AboutMeSection.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Edward Akapo">
 	<main>
 		<Toaster 
-		client:load
-		position="top-center"/>
+			client:idle
+			position="top-center"
+		/>
+		<AboutMeSection />
 		<ProjectsSection />
 		<GithubIntegration />
 		<DiscoverMore />

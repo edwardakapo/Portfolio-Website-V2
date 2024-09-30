@@ -42,7 +42,7 @@ export default function GithuRepoCard(
     }
     return (
         <>
-            <a className="border block p-4 w-[420px] rounded-lg hover:ring-4 hover:ring-gray-100" href={url} target="_blank">
+            <a className="border block p-4 w-[420px] rounded-lg hover:ring-4 hover:ring-gray-100" href={url} target="_blank" rel="noopener">
                 <h1 className="mb-0.5 text-[15px]">edwardakapo/<span className="font-bold">{name}</span> </h1>
                 <p className="text-xs text-gray-700 h-8 max-w-[350px]">{description && shrinkText(description)}</p>
                 <div className="flex items-center justify-between mt-2">

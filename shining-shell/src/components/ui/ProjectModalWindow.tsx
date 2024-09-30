@@ -1,7 +1,7 @@
 import React , { useState , useEffect} from "react";
 import type { Project } from "./SearchProject";
-import TechCarousel from "./TechCarousel";
-
+import {TechCarousel} from "./EmblaCarousels";
+import '@/styles/techCarousel.css'
 
 type ProjectModalWindowProps  = {
     isOpen : boolean;
@@ -56,7 +56,7 @@ export default function ProjectModalWindow( { isOpen, onClose, data} : ProjectMo
                                         {Object.entries(data.links)
                                             .map(([key ,value]) => (
                                                 <li key={key} className="pt-2">
-                                                    <a href={value} target="_blank" className="flex w-fit justify-between border border-black px-4 py-1 rounded-full stroke-black hover:border-main-highlight  hover:stroke-main-highlight focus:outline-none focus:ring-1 focus:ring-main-highlight focus:stroke-main-highlight focus:border-main-highlight ">
+                                                    <a href={value} rel="noopener" target="_blank" className="flex w-fit justify-between border border-black px-4 py-1 rounded-full stroke-black hover:border-main-highlight  hover:stroke-main-highlight focus:outline-none focus:ring-1 focus:ring-main-highlight focus:stroke-main-highlight focus:border-main-highlight ">
                                                         <p className="pr-2 tracking-wider">
                                                         {quickMap.get(key) ? quickMap.get(key)?.toUpperCase() : key.toUpperCase()}
                                                         </p> 

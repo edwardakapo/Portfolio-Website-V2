@@ -1,6 +1,6 @@
   
   .card {
-    width: 180px; /* Set a uniform width */
+    width: 190px; /* Set a uniform width */
     height: 250px; /* Set a uniform height */
     background-color: #f0f0f0; /* Default background color */
     border: 1px solid #ccc;
@@ -16,7 +16,7 @@
   }
   
   .card.hovered {
-    width: 220px; /* Grow width on hover */
+    width: 230px; /* Grow width on hover */
     z-index: 2; /* Bring hovered card to front */
   }
 .card.non-hovered {

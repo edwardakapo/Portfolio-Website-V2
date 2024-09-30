@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-// import '@/styles/cardhover.css'; // Create a CSS file for styling
+import { useState } from 'react';
 
-// const cards = ['Card 1', 'Card 2', 'Card 3']; // Example card data
 
 type Card = {
   img : string;
@@ -48,6 +46,7 @@ const DiscoverMoreCardMobile = ({data} : CardData) =>  {
         key={card.title}
         href={card.url}
         target='_blank'
+        rel="noopener noreferrer"
       >
           <img className="card-img w-[140px] h-[140px]" src={card.img}/>
           <p className='text-xl font-bold tracking-wide'>{card.title}</p>

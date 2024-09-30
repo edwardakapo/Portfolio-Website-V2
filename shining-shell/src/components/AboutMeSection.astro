@@ -1,0 +1,77 @@
+---
+import { AboutMeCarousel } from "./ui/EmblaCarousels";
+import "@/styles/aboutMeCarousel.css";
+import { Icon } from 'astro-icon/components'
+const Images = [
+    {
+        src: "https://images.unsplash.com/photo-1722218530128-514266124b4e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "Image of me at my desk",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1722218531137-2220e9dc0f91?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "Image of me at my",
+    },
+    {
+        src: "https://images.unsplash.com/photo-1717441706871-eac9e3cd85f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8fA%3D%3D",
+        alt: "another picture",
+    },
+];
+
+---
+
+<section>
+    <div class="">
+        <div class="flex items-center mx-auto w-[780px] justify-between">     
+            <AboutMeCarousel images={Images} client:load />
+            <div class="w-[320px]">
+                <h1 class="text-4xl font-bold pb-4">Hi, I'm Edward.</h1>
+                <p>
+                    I'm a Full Stack Software Developer based in Canada with a
+                    Bachelor's in Computer Science, three years of relevant industry
+                    experience, and two AWS certifications.
+                </p>
+                <p>
+                    Specializing in scalable web applications, my expertise includes
+                    front and back-end technologies, cloud architecture, and
+                    advanced API development. I ensure robust deployment pipelines,
+                    well-tested code, and responsive, functional UI/UX.
+                </p>
+    
+                <p>
+                    As a freelance developer, I offer custom solutions to small
+                    businesses, allowing them to streamline operations, optimize
+                    workflows, and enhance their overall efficiency.
+                </p>
+    
+                <p>
+                    You can learn more about me below, leave me a quick message, or
+                    book a quick chat with me.
+                </p>
+            </div>
+        </div>
+        <div class="w-[780px] mx-auto flex items-center pt-9 gap-x-3">
+            <a href="" target="_blank" rel="noopener"><Icon name="twitterIcon"/></a>
+            <a href="" target="_blank" rel="noopener"><Icon name="linkedInIconii"/></a>
+            <a href="" target="_blank" rel="noopener"><Icon name="githubIcon"/></a>
+        </div>
+    </div>
+</section>
+
+<style>
+    p {
+        font-size: 15px;
+        width: 295px;
+        padding-bottom: 20px;
+    }
+    [data-icon] {
+        font-size: 1.4rem;
+        color: var(--brand-color);
+    }
+    [data-icon="twitterIcon"] {
+        font-size: 1.3rem;
+        color: var(--brand-color);
+    }
+    a :hover {
+        --brand-color : #1bb6bb;
+    }
+</style>
