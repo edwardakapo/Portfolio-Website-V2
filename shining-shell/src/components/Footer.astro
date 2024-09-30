@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<footer class="pb-14">
+    <div class="w-fit mx-auto flex items-center pt-9 gap-x-4">
+        <a href="" target="_blank" rel="noopener"><Icon name="twitterIcon" /></a>
+        <a href="" target="_blank" rel="noopener"><Icon name="linkedInIconii" /></a>
+        <a href="" target="_blank" rel="noopener"><Icon name="githubIcon" /></a>
+    </div>
+    <p class="text-stone-600 w-fit mx-auto flex items-center gap-x-1"> <span class="text-xl">&copy; </span>2024 Edward Akapo</p>
+</footer>
+
+<style>
+p {
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+/* Style for the anchor elements */
+a {
+    background-color: rgb(168 162 158); /* Light stone color */
+    border-radius: 5px;
+    width: 38px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    transition: background-color 0.3s ease-in-out /* Smooth transition */
+}
+
+/* Hover effect for anchor elements */
+a:hover {
+    background-color: rgb(87 83 78); /* Darker stone color */
+}
+
+/* Icon styles */
+[data-icon] {
+    font-size: 1.2rem;
+    color: white;
+    transition: color 0.4s ease-in-out; /* Smooth color transition */
+}
+
+
+[data-icon="githubIcon"] {
+    font-size: 1.3rem;
+    color: white;
+}
+[data-icon="twitterIcon"] {
+    font-size: 1.15rem;
+    color: white;
+}
+</style>

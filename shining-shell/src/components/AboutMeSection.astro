@@ -49,7 +49,7 @@ const Images = [
                 </p>
             </div>
         </div>
-        <div class="w-[780px] mx-auto flex items-center pt-9 gap-x-3">
+        <div class="w-[780px] mx-auto flex items-center pt-10 gap-x-3">
             <a href="" target="_blank" rel="noopener"><Icon name="twitterIcon"/></a>
             <a href="" target="_blank" rel="noopener"><Icon name="linkedInIconii"/></a>
             <a href="" target="_blank" rel="noopener"><Icon name="githubIcon"/></a>
@@ -59,17 +59,22 @@ const Images = [
 
 <style>
     p {
-        font-size: 15px;
+        font-size: 14px;
         width: 295px;
-        padding-bottom: 20px;
+        padding-bottom: 25px;
     }
     [data-icon] {
-        font-size: 1.4rem;
+        font-size: 1.29rem;
         color: var(--brand-color);
+        transition: color 0.25s ease-in-out; /* Smooth color transition */
+
     }
     [data-icon="twitterIcon"] {
-        font-size: 1.3rem;
+        font-size: 1.22rem;
         color: var(--brand-color);
+    }
+    a {
+        /* transition: var(--brand-color) 0.2s ease-in-out; */
     }
     a :hover {
         --brand-color : #1bb6bb;
