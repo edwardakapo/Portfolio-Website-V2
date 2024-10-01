@@ -8,6 +8,7 @@ import ContactForm from '@/components/ContactForm.astro';
 import DiscoverMore from '@/components/DiscoverMore.astro';
 import AboutMeSection from '@/components/AboutMeSection.astro';
 import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro'
 ---
 
 <Layout title="Edward Akapo">
@@ -16,22 +17,28 @@ import Footer from '@/components/Footer.astro';
 			client:idle
 			position="top-center"
 		/>
-		<AboutMeSection />
-		<ProjectsSection />
-		<GithubIntegration />
-		<DiscoverMore />
-		<ContactForm />
-		<Footer />
+		<Header />
+		<div class="main-div">
+			<AboutMeSection />
+			<ProjectsSection />
+			<GithubIntegration />
+			<DiscoverMore />
+			<ContactForm />
+			<Footer />
+		</div>
 	</main>
 </Layout>
 
 <style>
 	main {
+		font-family: "Arimo";
+		padding-top: 3rem;
+
+	}
+	.main-div {
 		margin: auto;
 		/* padding-bottom: 10rem; */
-		padding-top: 10rem;
 		max-width: 900px;
-		font-family: "Arimo";
 		display: flex;
 		flex-direction: column;
 		row-gap: 150px;
