@@ -3,25 +3,101 @@
 ---
 
 
-<header class="w-full mb-32 text-center font-noto-sans ">
+<header class=" header w-full text-center font-noto-sans ">
     <div class="flex flex-col justify-center items-center">
-        <div class="mb-14">
-            <h1 class="text-[65px] font-bold tracking-widest mb-3">
+        <div class="title-div mb-14">
+            <h1 class="title-h1 text-[65px] font-bold tracking-widest mb-3">
                 EDWARD AKAPO
             </h1>
-            <h2 class="text-sm font-semibold text-gray-400 tracking-widewide">
-                CANADA BASED FULL STACK DEVELOPER & ENTREPRENEUR
+            <h2 class="title-h2 text-sm font-semibold text-gray-400 tracking-widewide">
+                CANADA BASED SOFTWARE ENGINEER & PRODUCT MANAGER
             </h2>
         </div>
-        <nav>
+        <nav class="navabar">
             <ul class="flex gap-x-5 tracking-wider text-[15px]">
-                <li>ABOUT ME</li>
-                <li>PROJECT/PORTFOLIO</li>
-                <li>DISCOVER MORE</li>
-                <li>GET IN TOUCH</li>
-                <li>WORK WITH ME</li>
+                <a href="#about-me" >ABOUT ME</a>
+                <a href="#projects">PROJECT/PORTFOLIO</a>
+                <a href="#discover-more">DISCOVER MORE</a>
+                <a href="#contact-form">GET IN TOUCH</a>
+                <a href="">WORK WITH ME</a>
             </ul>
         </nav>
     </div>
 
 </header>
+
+
+<script>
+
+const header = document.querySelector('.header') as HTMLElement;
+const title1 = document.querySelector('.title-h1') as HTMLElement;
+const title2 = document.querySelector('.title-h2') as HTMLElement;
+const titleDiv = document.querySelector('.title-div') as HTMLElement;
+const navbar = document.querySelector('.navabar') as HTMLElement;
+const mainDiv = document.querySelector('.main-div') as HTMLElement;
+
+if (!header || !title1 || !title2 || !titleDiv || !navbar) {
+    console.error('Required elements not found');
+} else {
+    let lastScrollTop = 0;
+    let isCompressed = false;
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && !isCompressed) {
+            // Scrolling down
+            title1.style.fontSize = '0px';  // Shrink to a smaller size instead of 0
+            title1.style.marginBottom = '0px';
+            title2.style.fontSize = '0px';  // Shrink to a smaller size instead of 0
+            mainDiv.style.paddingTop = '15rem';
+            header.style.paddingTop = '10px';
+            header.style.paddingBottom = '20px';
+            // header.style.borderBottom = '1px solid grey';
+            header.style.boxShadow = '0 2px 2px rgba(0, 0, 0, 0.1)';
+            titleDiv.style.height = '0px';
+            isCompressed = true;
+        } else if (scrollTop < lastScrollTop && isCompressed && scrollTop <= 0) {
+            // Scrolling up and at the top
+            title1.style.fontSize = '65px';
+            title1.style.marginBottom = '12px';  // Match the original mb-3 class
+            title2.style.fontSize = '14px';
+            mainDiv.style.paddingTop = '20rem';
+            header.style.paddingTop = '3rem';  // Match the original pt-12 class
+            header.style.paddingBottom = '1rem';  // Match the original pb-4 class
+            titleDiv.style.height = '130px';
+            titleDiv.style.marginBottom = '56px';
+            // header.style.borderBottom = '0px solid grey';
+            header.style.boxShadow = '0 0px 0px rgba(0, 0, 0, 0.1)';
+            isCompressed = false;
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, false);
+}
+
+</script>
+<style>
+        .header {
+            background-color: #ffffff;
+            padding-top: 3rem;
+            padding-bottom: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            transition: all 0.4s ease-in-out;
+            z-index: 2;
+        }
+        .title-h1 {
+            transition: all 0.3s ease-in-out;
+        }
+        .title-h2 {
+            transition: all 0.3s ease-in-out;
+        }
+        .title-div {
+            transition: all 0.3s ease-in-out;
+        }
+        .navbar {
+            transition: all 0.3s ease-in-out;
+        }
+</style>
