@@ -17,7 +17,7 @@ import Header from '@/components/Header.astro'
 			client:idle
 			position="top-center"
 		/>
-		<Header client:load/>
+		<Header />
 		<div class="main-div">
 			<AboutMeSection />
 			<ProjectsSection />
@@ -37,10 +37,12 @@ import Header from '@/components/Header.astro'
 	}
 	.main-div {
 		margin: auto;
-		padding-top: 20rem;
+		padding-top: 21rem;
 		max-width: 900px;
 		display: flex;
 		flex-direction: column;
 		row-gap: 150px;
+		/* transition: padding-top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+		transition: padding-top 0.4s ease;
 	}
 </style>

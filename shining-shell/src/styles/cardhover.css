@@ -17,7 +17,7 @@
   
   .card.hovered {
     width: 230px; /* Grow width on hover */
-    z-index: 2; /* Bring hovered card to front */
+    z-index: 1; /* Bring hovered card to front */
   }
 .card.non-hovered {
     width: 170px; /* Reduce width of non-hovered cards */

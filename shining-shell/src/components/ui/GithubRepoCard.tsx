@@ -64,7 +64,7 @@ export default function GithuRepoCard(
                                 e.preventDefault()
                                 e.stopPropagation()
                                 CopytoClipboard()
-                                }} className="z-50 border p-1 rounded-full hover:ring-2 hover:ring-gray-300 ">
+                                }} className="z-1 border p-1 rounded-full hover:ring-2 hover:ring-gray-300 ">
                                 {CopySVG}
                             </button>
                             </TooltipTrigger>
