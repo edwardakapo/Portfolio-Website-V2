@@ -3,11 +3,11 @@
 
 <nav class="navbar">
     <ul>
-        <li><a href="#about-me" class="nav-link">ABOUT ME</a></li>
-        <li><a href="#projects" class="nav-link">PROJECTS/PORTFOLIO</a></li>
-        <li><a href="#discover-more" class="nav-link">DISCOVER MORE</a></li>
-        <li><a href="#contact-form" class="nav-link">GET IN TOUCH</a></li>
-        <li><a href="#work-with-me" class="nav-link">WORK WITH ME</a></li>
+        <li><a href="#about-me" tabindex="1">ABOUT ME</a></li>
+        <li><a href="#projects" tabindex="2">PROJECTS/PORTFOLIO</a></li>
+        <li><a href="#discover-more" tabindex="3">DISCOVER MORE</a></li>
+        <li><a href="#contact-form" tabindex="4">GET IN TOUCH</a></li>
+        <li><a href="" tabindex="5">WORK WITH ME</a></li>
     </ul>
 </nav>
 
@@ -25,10 +25,27 @@
         letter-spacing: 0.05em;
         text-decoration: none;
         color: inherit;
-        transition: color 0.3s ease;
+        transition: color 0.2s ease;
     }
     .navbar a:hover,
     .navbar a.active {
         color: #3EA9AC;
     }
+
 </style>
+
+<script>
+    // Select all the navbar links
+    const navLinks = document.querySelectorAll<HTMLAnchorElement>('.navbar a');
+
+    // Add click event listener to each link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Remove active class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Add active class to the clicked link
+            this.classList.add('active');
+        });
+    });
+</script>

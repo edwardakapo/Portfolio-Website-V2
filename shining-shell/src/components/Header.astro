@@ -6,10 +6,12 @@ import Navbar from "./Navbar.astro"
     <div class="header-content">
         <div class="title-div">
             <h1 class="title-h1">
-                EDWARD AKAPO
+                <a href="" class="hover:text-focus-color">
+                    EDWARD AKAPO
+                </a>
             </h1>
             <h2 class="title-h2">
-                CANADA BASED SOFTWARE ENGINEER & PRODUCT MANAGER
+                CANADA BASED SOFTWARE ENGINEER & PRODUCT DESIGNER
             </h2>
         </div>
         <Navbar />
@@ -63,6 +65,7 @@ import Navbar from "./Navbar.astro"
     padding: 0 20px;
     height: 30px;
     margin-top: 10px;
+    transition : all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .header-content.compressed .title-div {
@@ -105,11 +108,11 @@ if (!header || !title1 || !title2 || !titleDiv || !mainDiv || !headerContent) {
 
     // Add a small delay before adding transition styles
     setTimeout(() => {
-        header.style.transition = 'all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        titleDiv.style.transition = 'all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        title1.style.transition = 'all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        title2.style.transition = 'all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        mainDiv.style.transition = 'padding-top 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        header.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        titleDiv.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        title1.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        title2.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        mainDiv.style.transition = 'padding-top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
     }, 50);
 
     // Function to handle scroll
@@ -132,11 +135,11 @@ if (!header || !title1 || !title2 || !titleDiv || !mainDiv || !headerContent) {
             mainDiv.style.paddingTop = '15rem';
             header.style.paddingTop = '30px';
             header.style.paddingBottom = '10px';
-            // header.style.boxShadow = '0 1px 1px rgba(0, 0, 0, 0.1)';
+            header.style.boxShadow = '0 1px 1px rgba(0, 0, 0, 0.1)';
             setTimeout(() => {
 
                 headerContent.classList.add('compressed');
-            },300)
+            },100)
             isCompressed = true;
         } else if (scrollTop <= 0 && isCompressed) {
             // At the top of the page
