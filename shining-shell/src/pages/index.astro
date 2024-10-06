@@ -17,14 +17,14 @@ import Header from '@/components/Header.astro'
 			client:idle
 			position="top-center"
 		/>
-		<Header />
+		<!-- <Header /> -->
 		<div class="main-div">
-			<AboutMeSection />
+			<!-- <AboutMeSection /> -->
 			<ProjectsSection />
-			<GithubIntegration />
+			<!-- <GithubIntegration />
 			<DiscoverMore />
 			<ContactForm />
-			<Footer />
+			<Footer /> -->
 		</div>
 	</main>
 </Layout>
@@ -38,6 +38,7 @@ import Header from '@/components/Header.astro'
 	.main-div {
 		margin: auto;
 		padding-top: 21rem;
+		padding-bottom: 21rem;
 		max-width: 900px;
 		display: flex;
 		flex-direction: column;
@@ -45,4 +46,6 @@ import Header from '@/components/Header.astro'
 		/* transition: padding-top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
 		transition: padding-top 0.4s ease;
 	}
+
+
 </style>
