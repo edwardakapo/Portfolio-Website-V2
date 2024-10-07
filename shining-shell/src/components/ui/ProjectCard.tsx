@@ -12,7 +12,7 @@ export default function ProjectCard(props : ProjectCard){
         return (
             <div 
                 className="py-2 w-[220px] h-[220px] border-black flex flex-col items-center hover:text-text-highlight
-                    max-[700px]:w-fit max-[700px]:h-fit max-[700px]:p-1">
+                    max-[700px]:w-fit max-[700px]:h-fit max-[700px]:py-0">
                 {/* This is the project card */}
                 <img 
                     className="w-[180px] h-[160px] object-center mb-2

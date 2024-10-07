@@ -22,10 +22,7 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
 
 
     return(
-        <div className="font-arimo fixed inset-0 z-50 bg-black/70 flex justify-center items-center"  
-        tabIndex={-1}>
-            <div className="relative bg-white rounded-xl max-w-[1000px] py-4 px-8
-                max-[1000px]:max-w-[650px]">
+            <div>
                 <div className="text-xs font-bold text-black bg-gray-100 p-2 rounded tracking-wider absolute -top-10 -translate-y-1/2 left-1/2 -translate-x-1/2 animate-delayedFadeOut ">
                     Hit <span className="text-text-highlight border border-text-highlight p-1">ESC</span> To Close
                 </div>
@@ -38,7 +35,6 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                                     {data.projectName.toUpperCase()}
                                 </h1>
                                 <button onClick={ onClose} autoFocus  className="flex flex-row w-fit items-center stroke-black hover:stroke-gray-500"> 
-                                {/* {BackArrow} Close */}
                                 {ExitIcon}
                                 </button> 
                             </div>
@@ -80,6 +76,5 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                     )}
                 </div>
             </div>
-        </div>
     )
 }
