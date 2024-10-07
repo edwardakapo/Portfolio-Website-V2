@@ -69,11 +69,18 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                                        max-[1000px]:w-[547px] max-[500px]:w-[343px] max-[1000px]:h-fit" >
                                     {data.projectDesc}{data.projectDesc}{data.projectDesc}{data.projectDesc}{data.projectDesc}
                                 </p>
-                                <ul className="min-[1001px]:hidden flex flex-wrap gap-y-2 gap-x-2 max-w-[350px] mb-4">
+                                <ul 
+                                    className="min-[1001px]:hidden flex flex-wrap gap-y-2 gap-x-2 max-w-[350px] mb-4 ml-1
+                                        max-[500px]:gap-y-3 max-[500px]:gap-x-3">
                                         {Object.entries(data.links)
                                             .map(([key ,value]) => (
                                                 <li key={key} className="">
-                                                    <a href={value} rel="noopener" target="_blank" className="flex w-fit justify-between border border-black px-4 py-1 rounded-full stroke-black hover:border-main-highlight  hover:stroke-main-highlight focus:outline-none focus:ring-1 focus:ring-main-highlight focus:stroke-main-highlight focus:border-main-highlight ">
+                                                    <a 
+                                                        href={value} 
+                                                        rel="noopener" 
+                                                        target="_blank" 
+                                                        className="flex w-fit justify-between border border-black px-4 py-1 rounded-full stroke-black hover:border-main-highlight  hover:stroke-main-highlight focus:outline-none focus:ring-1 focus:ring-main-highlight focus:stroke-main-highlight focus:border-main-highlight 
+                                                            max-[500px]:text-sm">
                                                         <p className="pr-2 tracking-wider">
                                                         {quickMap.get(key) ? quickMap.get(key)?.toUpperCase() : key.toUpperCase()}
                                                         </p> 
