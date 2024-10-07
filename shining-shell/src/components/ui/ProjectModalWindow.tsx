@@ -43,7 +43,7 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                             <ScrollArea className="lg:!overflow-visible lg:!h-auto h-[400px] mb-8 shadow-inner rounded-xl outline-gray-300 lg:shadow-none">
                             <div 
                                 className="flex flex-wrap justify-between gap-y-10 p-1 
-                                    max-[1000px]:pb-0.5 max-[1000px]:gap-y-5">
+                                    max-[1000px]:pb-0.5">
                                 <div className=" flex flex-col gap-y-3">
                                     <img 
                                         className="w-[300px] h-[250px] object-center outline outline-zinc-400 rounded-xl
