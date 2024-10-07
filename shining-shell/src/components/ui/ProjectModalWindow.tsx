@@ -22,29 +22,32 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
 
 
     return(
-            <div>
-                <div className="text-xs font-bold text-black bg-gray-100 p-2 rounded tracking-wider absolute -top-10 -translate-y-1/2 left-1/2 -translate-x-1/2 animate-delayedFadeOut ">
-                    Hit <span className="text-text-highlight border border-text-highlight p-1">ESC</span> To Close
-                </div>
-                <div className="w-[936px]
-                    max-[1000px]:min-w-[350px] max-[1000px]:max-w-[600px]">
+                <div className="w-[900px]
+                    max-[1000px]:max-w-[554px]
+                    max-[500px]:max-w-[350px]">
                     {data ? (
                         <>
-                            <div className="flex justify-between pb-10" >
-                                <h1 className="font-bold tracking-wider text-xl">
+                            <div className="flex justify-between items-start pb-10 sm:pb-10 max-[500px]:pb-4" >
+                                <h1 
+                                    className="font-bold tracking-wider text-xl
+                                    max-[500px]:text-[16px] max-[500px]:w-[250px] max-[500px]:leading-6">
                                     {data.projectName.toUpperCase()}
                                 </h1>
                                 <button onClick={ onClose} autoFocus  className="flex flex-row w-fit items-center stroke-black hover:stroke-gray-500"> 
                                 {ExitIcon}
                                 </button> 
                             </div>
-                            <div className="flex flex-wrap gap-x-10 pb-10 ">
+
+                            <ScrollArea className="lg:!overflow-visible lg:!h-auto h-[400px] mb-8 outline outline-2 rounded-xl outline-gray-300 lg:outline-none">
+                            <div 
+                                className="flex flex-wrap justify-between gap-y-10 p-0.5 
+                                    max-[1000px]:pb-0.5 max-[1000px]:gap-y-5">
                                 <div className=" flex flex-col gap-y-3">
                                     <img  className="w-[300px] h-[250px] object-center outline outline-zinc-400 rounded-xl" src={data.coverImg}/>
-                                    <ul>
+                                    <ul className="max-[1000px]:hidden flex flex-col gap-y-2 pt-3">
                                         {Object.entries(data.links)
                                             .map(([key ,value]) => (
-                                                <li key={key} className="pt-2">
+                                                <li key={key} className="">
                                                     <a href={value} rel="noopener" target="_blank" className="flex w-fit justify-between border border-black px-4 py-1 rounded-full stroke-black hover:border-main-highlight  hover:stroke-main-highlight focus:outline-none focus:ring-1 focus:ring-main-highlight focus:stroke-main-highlight focus:border-main-highlight ">
                                                         <p className="pr-2 tracking-wider">
                                                         {quickMap.get(key) ? quickMap.get(key)?.toUpperCase() : key.toUpperCase()}
@@ -59,7 +62,22 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                                 <p className="w-[550px] h-[340px] p-3 outline outline-zinc-400 rounded-xl" >
                                     {data.projectDesc}
                                 </p>
+                                <ul className="min-[1001px]:hidden flex flex-wrap gap-y-2 gap-x-2 max-w-[350px]">
+                                        {Object.entries(data.links)
+                                            .map(([key ,value]) => (
+                                                <li key={key} className="">
+                                                    <a href={value} rel="noopener" target="_blank" className="flex w-fit justify-between border border-black px-4 py-1 rounded-full stroke-black hover:border-main-highlight  hover:stroke-main-highlight focus:outline-none focus:ring-1 focus:ring-main-highlight focus:stroke-main-highlight focus:border-main-highlight ">
+                                                        <p className="pr-2 tracking-wider">
+                                                        {quickMap.get(key) ? quickMap.get(key)?.toUpperCase() : key.toUpperCase()}
+                                                        </p> 
+                                                        {DiagonalArrow}
+                                                    </a>
+                                                </li>
+                                        ))
+                                        }
+                                </ul>
                             </div>
+                            </ScrollArea>
                             <div>
                                 <h2 className="tracking-wider">
                                     TECHNOLOGIES & TOOLS
@@ -75,6 +93,5 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                         </div>
                     )}
                 </div>
-            </div>
     )
 }

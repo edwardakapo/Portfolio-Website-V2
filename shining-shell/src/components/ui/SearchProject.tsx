@@ -54,20 +54,6 @@ export default function SearchProject() {
   const searchBarRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    if (isModalOpen) {
-      // Disable scroll on body
-      // document.body.style.overflow = 'hidden';
-    } else {
-      // Re-enable scroll on body
-      // document.body.style.overflow = 'auto';
-    }
-
-    // Clean up to ensure scroll is re-enabled when the component unmounts
-    return () => {
-      // document.body.style.overflow = 'auto';
-    };
-  }, [isModalOpen]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -97,11 +83,11 @@ export default function SearchProject() {
 
   const closeModal = () => {
     setIsModalOpen(false)
-    // setTimeout(() => {
-    //   setSelectedProject(null)
+    setTimeout(() => {
+      setSelectedProject(null)
 
-    // }, 100)
-    setSelectedProject(null)
+    }, 50) //short delay to allow closing animation
+    // setSelectedProject(null)
 
   }
 
@@ -172,7 +158,7 @@ export default function SearchProject() {
         className="h-[705px] w-fit mx-auto
               max-[700px]:h-[660px]">{/* add a 3 projects to the scroll area at once */}
         <ul
-          className="max-w-[750px] grid grid-cols-3 gap-x-8 gap-y-2 
+          className="max-w-[750px] grid grid-cols-3 gap-x-8 gap-y-2 mx-4
                  max-[700px]:grid-cols-2 max-[700px]:gap-y-10 max-[700px]:gap-x-10">
           {sortProjects(
             dummyData
@@ -221,18 +207,18 @@ export default function SearchProject() {
       </Dialog> */}
 
 
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-[1000px] h-[700px]" aria-describedby={undefined}>
+      <Dialog open={isModalOpen} onOpenChange={closeModal}>
+        <DialogContent 
+          className="font-arimo max-w-[1000px] justify-center items-center
+            max-[1000px]:max-w-fit max-[500px]:px-2 max-[500px]:py-4 max-[500px]:rounded-xl" 
+            aria-describedby={undefined}>
           <VisuallyHidden.Root asChild>
             <DialogTitle>This is meant to be a descriptive title for visually impaired</DialogTitle>
           </VisuallyHidden.Root>
-
-          <div className=" flex justify-center items-center">
-            <p>
-              centered Texrt
-            </p>
-          </div>
-
+            <ProjectModalWindow 
+                  data = {selectedProject ? selectedProject : null}
+                  onClose={closeModal}
+                />
         </DialogContent>
       </Dialog>
 
