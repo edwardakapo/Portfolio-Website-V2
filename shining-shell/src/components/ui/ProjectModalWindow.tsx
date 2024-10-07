@@ -86,10 +86,11 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                             </div>
                             </ScrollArea>
                             <div>
-                                <h2 className="tracking-wider">
+                                <h2 className="tracking-wider max-[500px]:text-sm">
                                     TECHNOLOGIES & TOOLS
                                 </h2>
-                                <hr className="border border-dashed border-black mx-1 mt-2 mb-6"/>
+                                <hr className="border border-dashed border-black mx-1 mt-2 mb-6
+                                    max-[500px]:mb-4"/>
                                 <TechCarousel data={data.techStack}/>
 
                             </div>
