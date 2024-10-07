@@ -56,15 +56,15 @@ export default function SearchProject(){
     useEffect(() => {
       if (isModalOpen) {
         // Disable scroll on body
-        document.body.style.overflow = 'hidden';
+        // document.body.style.overflow = 'hidden';
       } else {
         // Re-enable scroll on body
-        document.body.style.overflow = 'auto';
+        // document.body.style.overflow = 'auto';
       }
   
       // Clean up to ensure scroll is re-enabled when the component unmounts
       return () => {
-        document.body.style.overflow = 'auto';
+        // document.body.style.overflow = 'auto';
       };
     }, [isModalOpen]);
 
@@ -96,10 +96,12 @@ export default function SearchProject(){
 
     const closeModal = () => {
         setIsModalOpen(false)
-        setTimeout(() => {
-          setSelectedProject(null)
+        // setTimeout(() => {
+        //   setSelectedProject(null)
 
-        }, 100)
+        // }, 100)
+        setSelectedProject(null)
+
     }
 
     return (
@@ -164,6 +166,7 @@ export default function SearchProject(){
                 </SelectContent>
               </Select>
             </div>
+
           <ScrollArea 
             className="h-[705px] w-fit mx-auto
               max-[700px]:h-[660px]">{/* add a 3 projects to the scroll area at once */}
@@ -205,7 +208,7 @@ export default function SearchProject(){
               onClose={closeModal}
             />
           )} */}
-        <Dialog open={isModalOpen} onOpenChange={() => {}}>
+        {/* <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogTrigger></DialogTrigger>
         <DialogTitle></DialogTitle>
         <DialogContent onEscapeKeyDown={closeModal} aria-describedby={undefined}>
@@ -214,7 +217,26 @@ export default function SearchProject(){
                 onClose={closeModal}
               />
         </DialogContent>
-      </Dialog>
+      </Dialog> */}
+
+
+<Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+{/* <DialogTrigger ></DialogTrigger> */}
+<DialogContent className="max-w-[1000px] h-[700px]" onCloseAutoFocus={(e)=>{e.preventDefault}}>
+<DialogHeader>
+    <DialogTitle>Edit profile</DialogTitle>
+    <DialogDescription>
+      Make changes to your profile here. Click save when you're done.
+    </DialogDescription>
+  </DialogHeader>
+  <div className=" flex justify-center items-center">
+    <p>
+      centered Texrt
+    </p>
+  </div>
+</DialogContent>
+</Dialog>
+
 
         </div>
     )
