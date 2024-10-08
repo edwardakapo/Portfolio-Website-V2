@@ -209,7 +209,7 @@ export default function SearchProject() {
 
       <Dialog open={isModalOpen} onOpenChange={closeModal}>
         <DialogContent 
-          className="font-arimo max-w-[1000px] justify-center items-center
+          className="font-arimo max-w-[1000px] justify-center items-center 
             max-[1000px]:max-w-fit max-[500px]:px-2 max-[500px]:py-4 max-[500px]:rounded-xl" 
             aria-describedby={undefined}>
           <VisuallyHidden.Root asChild>

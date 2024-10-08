@@ -92,7 +92,7 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                                 </ul>
                             </div>
                             </ScrollArea>
-                            <div>
+                            <div className="pb-0.5">
                                 <h2 className="tracking-wider max-[500px]:text-sm">
                                     TECHNOLOGIES & TOOLS
                                 </h2>
