@@ -22,3 +22,9 @@
   }
 
 
+@media screen and (max-width : 800px){
+  .embla1{
+
+    --slide-width : 350px;
+  }
+}

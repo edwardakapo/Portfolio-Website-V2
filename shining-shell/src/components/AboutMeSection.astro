@@ -21,7 +21,9 @@ const Images = [
 
 <section id="about-me">
     <div class="">
-        <div class="flex items-center mx-auto w-[780px] justify-between">     
+        <div 
+            class="flex items-center mx-auto w-[780px] justify-between
+                max-[800px]:w-[350px] max-[800px]:flex-col max-[800px]:gap-y-10">     
             <AboutMeCarousel images={Images} client:load />
             <div class="w-[320px]">
                 <h1 class="text-4xl font-bold pb-4">Hi, I'm Edward.</h1>
@@ -49,7 +51,7 @@ const Images = [
                 </p>
             </div>
         </div>
-        <div class="w-[780px] mx-auto flex items-center pt-10 gap-x-3">
+        <div class="w-[780px] max-[800px]:w-[350px] max-[800px]:pt-2 mx-auto flex items-center pt-10 gap-x-3">
             <a href="" target="_blank" rel="noopener"><Icon name="twitterIcon"/></a>
             <a href="" target="_blank" rel="noopener"><Icon name="linkedInIconii"/></a>
             <a href="" target="_blank" rel="noopener"><Icon name="NotionIcon"/></a>
