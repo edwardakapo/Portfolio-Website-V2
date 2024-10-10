@@ -42,14 +42,14 @@ const DiscoverMoreCardMobile = ({data} : CardData) =>  {
     <div className=" w-fit flex flex-col gap-y-10">
       {data.map((card) => (
         <a
-        className='border-2 border-zinc-200 w-[240px] h-[220px] flex flex-col items-center justify-center gap-y-6 rounded-3xl bg-[#f0f0f0]'
+        className='border-2 border-zinc-200 w-[220px] h-[200px] flex flex-col items-center justify-center gap-y-6 rounded-3xl bg-[#f0f0f0]'
         key={card.title}
         href={card.url}
         target='_blank'
         rel="noopener noreferrer"
       >
-          <img className="card-img w-[140px] h-[140px]" src={card.img}/>
-          <p className='text-xl font-bold tracking-wide'>{card.title}</p>
+          <img className="card-img w-[130px] h-[130px]" src={card.img}/>
+          <p className='text-lg font-bold tracking-wide'>{card.title}</p>
         </a>
       ))}
     </div>

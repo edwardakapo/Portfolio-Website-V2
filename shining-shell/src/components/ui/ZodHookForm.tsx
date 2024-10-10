@@ -85,7 +85,7 @@ const MainContactForm = () => {
                      {...register("name")}
                      type="text"
                      id="name"
-                     className={`border ${errors.name ? "border-red-500 bg-red-50" : "border-stone-400 bg-gray-50"} p-2 w-[500px]`}
+                     className={`border ${errors.name ? "border-red-500 bg-red-50" : "border-stone-400 bg-gray-50"} p-2 w-[500px] max-[500px]:w-[350px]`}
                  />
              </div>
 
@@ -96,7 +96,7 @@ const MainContactForm = () => {
                      {...register("email")}
                      type="text"
                      id="email"
-                     className={`border ${errors.email ? "border-red-500 bg-red-50" : "border-stone-400 bg-gray-50"} p-2 w-[500px]`}
+                     className={`border ${errors.email ? "border-red-500 bg-red-50" : "border-stone-400 bg-gray-50"} p-2 w-[500px] max-[500px]:w-[350px]`}
                  />
              </div>
 
@@ -108,7 +108,7 @@ const MainContactForm = () => {
                      type="text"
                      id="subject"
                      placeholder="Let's work together!"
-                     className={`border ${errors.subject ? "border-red-500 bg-red-50" : "border-stone-400 bg-gray-50"} p-2 w-[500px]`}
+                     className={`border ${errors.subject ? "border-red-500 bg-red-50" : "border-stone-400 bg-gray-50"} p-2 w-[500px] max-[500px]:w-[350px]`}
                  />
              </div>
 
@@ -119,7 +119,7 @@ const MainContactForm = () => {
                      {...register("message")}
                      id="message"
                      placeholder="What can I help you with today?"
-                     className={`border ${errors.message ? "border-red-500 bg-red-50" : "border-stone-400 bg-gray-50"} p-2 w-[500px] h-[150px] resize-none`}
+                     className={`border ${errors.message ? "border-red-500 bg-red-50" : "border-stone-400 bg-gray-50"} p-2 w-[500px] max-[500px]:w-[350px] h-[150px] resize-none`}
                  />
              </div>
 
