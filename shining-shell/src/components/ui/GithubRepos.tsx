@@ -91,7 +91,7 @@ useEffect (  () => {
     return (
         <div className="flex flex-col gap-y-5 w-fit h-fit">
             <div 
-                className={` py-1 w-[856px] max-[900px]:w-[600px] max-[600px]:w-[350px] lg:items-center flex flex-col gap-y-3 transition-all duration-300 ${isExpanded ? 'h-[475px] max-[900px]:h-[960px]' : 'h-[206px] max-[900px]:h-[220px]'} overflow-hidden`}>
+                className={` py-1 w-[856px] max-[900px]:w-[600px] max-[600px]:w-[350px] max-[900px]:gap-y-9 lg:items-center flex flex-col gap-y-3 transition-all duration-300 ${isExpanded ? 'h-[475px] max-[900px]:h-[986px]' : 'h-[206px] max-[900px]:h-[246px]'} overflow-hidden`}>
                 <div className="place-self-end pr-0.5">
                     <Select value={selectedGrid} onValueChange={(value) => setSelectedGrid(value)}>
                         <SelectTrigger className="w-fit rounded-2xl py-1 gap-x-2 border-gray-300 h-fit text-xs font-bold tracking-wider hover:ring-2 hover:ring-gray-300">
