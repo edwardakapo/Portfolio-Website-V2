@@ -60,19 +60,23 @@ const Images = [
 </section>
 
 <style>
+    #about-me{
+        --size-twitter : 1.22rem;
+        --size-icon : 1.29rem;
+    }
     p {
         font-size: 14px;
         width: 295px;
         padding-bottom: 25px;
     }
     [data-icon] {
-        font-size: 1.29rem;
+        font-size: var(--size-icon);
         color: var(--brand-color);
         transition: color 0.25s ease-in-out; /* Smooth color transition */
 
     }
     [data-icon="twitterIcon"] {
-        font-size: 1.22rem;
+        font-size: var(--size-twitter);
         color: var(--brand-color);
     }
     a {
@@ -80,5 +84,12 @@ const Images = [
     }
     a :hover {
         --brand-color : #1bb6bb;
+    }
+
+    @media screen and (max-width:800px) {
+        #about-me{
+        --size-twitter : 1.5rem;
+        --size-icon : 1.57rem;
+    }
     }
 </style>
