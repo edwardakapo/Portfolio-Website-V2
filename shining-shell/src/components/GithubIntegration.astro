@@ -4,10 +4,14 @@ import GithubRepos from '@/components/ui/GithubRepos';
 
 ---
 
-<section id="github-integration" class=" w-fit mx-auto">
+<section 
+    id="github-integration" 
+    class="w-fit mx-auto
+        max-[900px]:w-[600px]
+        max-[600px]:w-[350px]">
         <div class="mb-10">
             <h1 class="text-2xl font-bold mb-2"> There's More On The Way</h1>
-            <p> Check back in to see some interesting new projects and updates</p>
+            <p class="max-[600px]:text-sm"> Check back in to see some interesting new projects and updates</p>
         </div>
         <div class="flex flex-col gap-y-12">
             <GithubCalendar client:only="react"/>

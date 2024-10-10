@@ -90,7 +90,8 @@ useEffect (  () => {
     }
     return (
         <div className="flex flex-col gap-y-5 w-fit h-fit">
-            <div className={` py-1 w-[856px] items-center flex flex-col gap-y-3 transition-all duration-300 ${isExpanded ? 'h-[475px]' : 'h-[206px]'} overflow-hidden`}>
+            <div 
+                className={` py-1 w-[856px] max-[900px]:w-[600px] max-[600px]:w-[350px] lg:items-center flex flex-col gap-y-3 transition-all duration-300 ${isExpanded ? 'h-[475px] max-[900px]:h-[960px]' : 'h-[206px] max-[900px]:h-[220px]'} overflow-hidden`}>
                 <div className="place-self-end pr-0.5">
                     <Select value={selectedGrid} onValueChange={(value) => setSelectedGrid(value)}>
                         <SelectTrigger className="w-fit rounded-2xl py-1 gap-x-2 border-gray-300 h-fit text-xs font-bold tracking-wider hover:ring-2 hover:ring-gray-300">
@@ -104,8 +105,10 @@ useEffect (  () => {
                 </div>
                 
                 <div className={`${selectedGrid === "pinned" ? "block" : "hidden"}`}>
-                    <h1 className="text-sm p-1 mb-1 text-gray-500">Here are the projects I want to highlight </h1> 
-                    <ul className="grid grid-cols-2 gap-y-2 gap-x-2 justify-between" >
+                    <h1 className="text-sm max-[900px]:text-[16px] p-1 mb-1 text-gray-500">Here are the projects I want to highlight </h1> 
+                    <ul 
+                        className="grid grid-cols-2 gap-y-2 gap-x-2 justify-between
+                            max-[900px]:grid-cols-1 max-[900px]:gap-y-4" >
                         {pinnedRepos.map((repo) => (
                             <li key={repo.name} className="w-fit">
                                 <GithuRepoCard {...repo}/>
@@ -116,8 +119,10 @@ useEffect (  () => {
                 </div>
                 
                 <div className={`${selectedGrid === "recent" ? "block" : "hidden"}`}>
-                    <h1 className="text-sm p-1 mb-1 text-gray-500"> The latest projects I've been working on</h1> 
-                    <ul className="grid grid-cols-2 gap-y-2 gap-x-2 justify-between mx-0.5">
+                    <h1 className="text-sm max-[900px]:text-[16px] p-1 mb-1 text-gray-500"> The latest projects I've been working on</h1> 
+                    <ul 
+                        className="grid grid-cols-2 gap-y-2 gap-x-2 justify-between
+                            max-[900px]:grid-cols-1 max-[900px]:gap-y-4" >
                         {recentRepos
                         .sort((a,b) => (new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()))
                         .map((repo) => (
@@ -129,7 +134,7 @@ useEffect (  () => {
                     </ul>
                 </div>
             </div>
-                <button onClick={() => { setIsExpanded(!isExpanded)}} className="place-self-center flex gap-x-1 text-xs border w-fit px-4 py-0.5 rounded-3xl items-center tracking-wide hover:ring-2 hover:ring-gray-300">
+                <button onClick={() => { setIsExpanded(!isExpanded)}} className="place-self-center flex gap-x-1 text-xs border w-fit px-4 py-0.5 rounded-3xl items-center tracking-wide hover:ring-2 hover:ring-gray-300 max-[900px]:py-1 max-[900px]:border-2">
                 {isExpanded ? 'Show Less' : 'Show More'} <Arrow isExpanded={isExpanded}/>
                 </button>
         </div>
