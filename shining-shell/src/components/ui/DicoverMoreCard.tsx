@@ -39,7 +39,7 @@ const DiscoverMoreCard = ( {data} : CardData) => {
 
 const DiscoverMoreCardMobile = ({data} : CardData) =>  {
   return (
-    <div className=" w-[600px] flex flex-col justify-between">
+    <div className=" w-fit flex flex-col gap-y-10">
       {data.map((card) => (
         <a
         className='border-2 border-zinc-200 w-[240px] h-[220px] flex flex-col items-center justify-center gap-y-6 rounded-3xl bg-[#f0f0f0]'

@@ -24,7 +24,7 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
     return(
                 <div className="w-[900px]
                     max-[1000px]:max-w-[554px]
-                    max-[500px]:max-w-[350px]">
+                    max-[500px]:max-w-[350px] h-fit">
                     {data ? (
                         <>
                             <div className="flex justify-between items-start pb-10 sm:pb-6 max-[500px]:pb-4" >
@@ -35,7 +35,7 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                                 </h1>
                                 <button onClick={ onClose} autoFocus  
                                     className="flex flex-row w-fit items-center stroke-black hover:stroke-gray-500
-                                        max-[1000px]:border max-[1000px]:border-2 max-[1000px]:p-1 max-[1000px]:rounded-full "> 
+                                       max-[1000px]:border-2 max-[1000px]:p-1 max-[1000px]:rounded-full "> 
                                 {ExitIcon}
                                 </button> 
                             </div>
@@ -92,7 +92,7 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                                 </ul>
                             </div>
                             </ScrollArea>
-                            <div className="pb-0.5">
+                            <div>
                                 <h2 className="tracking-wider max-[500px]:text-sm">
                                     TECHNOLOGIES & TOOLS
                                 </h2>
