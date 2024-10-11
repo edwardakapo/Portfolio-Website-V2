@@ -1,168 +1,114 @@
 ---
 import Navbar from "./Navbar.astro"
 ---
-
-<header class="header">
-    <div class="header-content">
-        <div class="title-div">
-            <h1 class="title-h1">
-                <a href="" class="hover:text-focus-color">
-                    EDWARD AKAPO
-                </a>
+<section id="header">
+    <div id="header-content" class="">
+        <a href="">
+            <h1 id="main-title">
+                edward akapo
             </h1>
-            <h2 class="title-h2">
-                CANADA BASED SOFTWARE ENGINEER & PRODUCT DESIGNER
-            </h2>
-        </div>
+        </a>
+        <h2 id="subtitle">
+            canada-based software engineer & product designer
+        </h2>
+    </div>
+    <div class="nav">
+
         <Navbar />
     </div>
-</header>
+</section>
+
 
 <style>
-.header {
-    background-color: #ffffff;
-    font-family: 'Noto sans';
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-}
+    #header {
+        font-family: 'Noto sans';
+        text-transform: uppercase;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        --transition-animation : all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top : 2rem;
+        padding-bottom: 3rem;
+        transition: var(--transition-animation)
+    }
+    a:hover {
+        color: #3EA9AC;
+    }
+    #header h1 {
+        font-size: 65px;
+        font-weight: 700;
+        letter-spacing: calc(65px * 0.1);
+        margin: 0;
+        transition: var(--transition-animation)
+    }
+    #header h2 {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: calc(14px * 0.3);
+        color: #A8A8A8;
+        margin: 0.8rem 0 0 0;
+        transition: var(--transition-animation)
+    }
 
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 20px; /* Add this line to ensure minimum height */
-}
+    #header.scrolled #header-content {
+        padding: 2.5rem 0;
+    }
+    #header.scrolled h1 {
+        font-size: 0px;
+    }
+    #header.scrolled h2 {
+        font-size: 0px;
+    }
 
-.title-div {
-    margin-bottom: 3.5rem;
-    text-align: center;
-}
-
-.title-h1 {
-    font-size: 65px;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.75rem;
-}
-
-.title-h2 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #9ca3af;
-    letter-spacing: 0.25em;
-}
-
-/* Add these new styles */
-.header-content.compressed {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 30px;
-    margin-top: 10px;
-    transition : all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.header-content.compressed .title-div {
-    margin-bottom: 0;
-}
+    /* Add this to create space for the fixed header */
+    body {
+        padding-top: 180px; /* Adjust based on your header's initial height */
+    }
 </style>
 
 <script>
-const header = document.querySelector('.header') as HTMLElement;
-const headerContent = document.querySelector('.header-content') as HTMLElement;
-const title1 = document.querySelector('.title-h1') as HTMLElement;
-const title2 = document.querySelector('.title-h2') as HTMLElement;
-const titleDiv = document.querySelector('.title-div') as HTMLElement;
-const mainDiv = document.querySelector('.main-div') as HTMLElement;
-
-if (!header || !title1 || !title2 || !titleDiv || !mainDiv || !headerContent) {
-    console.error('Required elements not found');
-} else {
-    let lastScrollTop = 0;
-    let isCompressed = false;
-    let initialLoad = true;
-
-    // Function to set initial styles
-    const setInitialStyles = () => {
-        title1.style.fontSize = '65px';
-        title1.style.marginBottom = '12px';
-        title2.style.fontSize = '14px';
-        titleDiv.style.height = '130px';
-        titleDiv.style.overflow = 'visible';
-        mainDiv.style.paddingTop = '21rem';
-        header.style.paddingTop = '5rem';
-        header.style.paddingBottom = '1rem';
-        titleDiv.style.marginBottom = '56px';
-        header.style.boxShadow = 'none';
-        headerContent.classList.remove('compressed');
-    };
-
-    // Set initial styles
-    setInitialStyles();
-
-    // Add a small delay before adding transition styles
-    setTimeout(() => {
-        header.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        titleDiv.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        title1.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        title2.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        mainDiv.style.transition = 'padding-top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-    }, 50);
-
-    // Function to handle scroll
-    const handleScroll = () => {
-        let scrollTop = window.scrollY || document.documentElement.scrollTop;
-        
-        // Ignore tiny scroll movements on initial load
-        if (initialLoad && Math.abs(scrollTop - lastScrollTop) < 5) {
-            return;
-        }
-        initialLoad = false;
-
-        if (scrollTop > 50 && !isCompressed) {
-            // Scrolling down past threshold
-            title1.style.fontSize = '0';
-            title1.style.marginBottom = '0';
-            title2.style.fontSize = '0';
-            titleDiv.style.height = '0';
-            titleDiv.style.overflow = 'hidden';
-            mainDiv.style.paddingTop = '15rem';
-            header.style.paddingTop = '30px';
-            header.style.paddingBottom = '10px';
-            header.style.boxShadow = '0 1px 1px rgba(0, 0, 0, 0.1)';
-            setTimeout(() => {
-
-                headerContent.classList.add('compressed');
-            },100)
-            isCompressed = true;
-        } else if (scrollTop <= 0 && isCompressed) {
-            // At the top of the page
-            setInitialStyles();
-            isCompressed = false;
-        }
-        
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    };
-
-    // Use requestAnimationFrame for smooth animation
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header') as HTMLElement;
+    const navbar = document.getElementById('navbar') as HTMLElement;
+    let isScrolled = false;
     let ticking = false;
-    window.addEventListener('scroll', () => {
+
+    function updateHeaderState(scrolled: boolean) {
+        if (scrolled) {
+            header.classList.add('scrolled');
+            navbar.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+            navbar.classList.remove('scrolled');
+
+        }
+    }
+
+    function handleScroll() {
         if (!ticking) {
             window.requestAnimationFrame(() => {
-                handleScroll();
+                const shouldBeScrolled = window.scrollY > 50; // Adjust this value as needed
+                if (shouldBeScrolled !== isScrolled) {
+                    isScrolled = shouldBeScrolled;
+                    updateHeaderState(isScrolled);
+                }
                 ticking = false;
             });
             ticking = true;
         }
-    }, { passive: true });
+    }
 
-    // Trigger handleScroll on page load to set correct initial state
-    window.addEventListener('load', handleScroll);
-}
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Initial call to set correct state on page load
+    handleScroll();
+});
 </script>

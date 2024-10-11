@@ -1,27 +1,54 @@
 ---
 ---
 
-<nav class="navbar">
+<nav id="navbar" class="navbar">
     <ul>
-        <li><a href="#about-me" tabindex="1">ABOUT ME</a></li>
-        <li><a href="#projects" tabindex="2">PROJECTS/PORTFOLIO</a></li>
-        <li><a href="#discover-more" tabindex="3">DISCOVER MORE</a></li>
-        <li><a href="#contact-form" tabindex="4">GET IN TOUCH</a></li>
-        <li><a href="" tabindex="5">WORK WITH ME</a></li>
+        <li><a href="#about-me" >ABOUT ME</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#discover-more">DISCOVER MORE</a></li>
+        <li><a href="#contact-form">GET IN TOUCH</a></li>
+        <li><a href="">WORK WITH ME</a></li>
     </ul>
 </nav>
 
 <style>
     .navbar {
+        font-family: 'Noto sans';
+        width: fit-content;
+        margin: auto;
+        /* position: fixed; */
+        /* translate: -50%;
+        left: 50%;
+        width: 628px; */
+        transition: background 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+    }
+    #navbar.scrolled {
+        /* all the code neede to turn the navbar into a black solid nav */ 
+        position: fixed;
+        left: 50%;
+        width: 668px;
+        translate: -50%;
+        background: #000000;
+        z-index: 2;
+        height: 40px;
+        padding: 0px 20px 0px 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        color: #ffffff;
     }
     .navbar ul {
         display: flex;
-        column-gap: 1.25rem;
+        column-gap: 1.9rem;
         list-style-type: none;
         padding: 0;
+
     }
     .navbar a {
-        font-size: 0.9375rem;
+        font-size: 14.5px;
+        font-weight: 500;
         letter-spacing: 0.05em;
         text-decoration: none;
         color: inherit;
@@ -48,4 +75,5 @@
             this.classList.add('active');
         });
     });
+
 </script>
