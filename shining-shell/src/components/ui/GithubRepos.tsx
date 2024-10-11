@@ -134,7 +134,7 @@ useEffect (  () => {
                     </ul>
                 </div>
             </div>
-                <button onClick={() => { setIsExpanded(!isExpanded)}} className="place-self-center flex gap-x-1 text-xs border w-fit px-4 py-0.5 rounded-3xl items-center tracking-wide hover:ring-2 hover:ring-gray-300 max-[900px]:py-1 max-[900px]:border-2 max-[900px]:text-[14px]">
+                <button onClick={() => { setIsExpanded(!isExpanded)}} className="place-self-center flex gap-x-1 text-xs border w-fit px-4 py-0.5 rounded-3xl items-center tracking-wide hover:ring-2 hover:ring-gray-300 max-[900px]:py-1 max-[900px]:border-2">
                 {isExpanded ? 'Show Less' : 'Show More'} <Arrow isExpanded={isExpanded}/>
                 </button>
         </div>

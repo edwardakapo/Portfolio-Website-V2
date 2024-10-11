@@ -47,7 +47,7 @@ export default function ProjectModalWindow( { onClose, data} : ProjectModalWindo
                                 <div className=" flex flex-col gap-y-3">
                                     <img 
                                         className="w-[300px] h-[250px] object-center outline outline-zinc-400 rounded-xl
-                                           max-[1000px]:w-[200px] max-[1000px]:h-[150px]" 
+                                           max-[1000px]:w-[220px] max-[1000px]:h-[170px]" 
                                         src={data.coverImg}/>
                                     <ul className="max-[1000px]:hidden flex flex-col gap-y-2 pt-3">
                                         {Object.entries(data.links)
