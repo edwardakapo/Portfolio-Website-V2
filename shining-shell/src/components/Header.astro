@@ -11,6 +11,9 @@ import Navbar from "./Navbar.astro"
         <h2 id="subtitle">
             canada-based software engineer & product designer
         </h2>
+        <h2 id="subtitle2">
+            canada-based SWE &  product designer
+        </h2>
     </div>
     <div class="nav">
 
@@ -67,10 +70,44 @@ import Navbar from "./Navbar.astro"
     #header.scrolled h2 {
         font-size: 0px;
     }
+    #subtitle2 {
+        display: none;
+    }
 
     /* Add this to create space for the fixed header */
-    body {
-        padding-top: 180px; /* Adjust based on your header's initial height */
+    /* body {
+        padding-top: 180px;
+    } */
+
+    @media screen and (max-width:800px){
+
+        #header {
+
+        }
+        #header h1 {
+            width: 80%;
+            margin : auto;
+            font-size: 60px;
+            text-align: center;
+            line-height: 65px;
+            padding-bottom: 1rem;
+        }
+
+        #header h2 {
+            width: 90%;
+            margin : auto;
+            text-align: center;
+        }
+        #subtitle {
+            display: none;
+        }
+        #subtitle2 {
+        display: block;
+        }
+        #header.scrolled h1 {
+        font-size: 0px;
+        line-height: 0;
+    }
     }
 </style>
 
