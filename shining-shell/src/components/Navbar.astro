@@ -1,17 +1,24 @@
 ---
+import { DropDownNav } from "./ui/dropdownnav";
 ---
+<div class="nav-div">
 
-<nav id="navbar" class="navbar">
-    <ul>
-        <li><a href="#about-me" >ABOUT ME</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-        <li><a href="#discover-more">DISCOVER MORE</a></li>
-        <li><a href="#contact-form">GET IN TOUCH</a></li>
-        <li><a href="">WORK WITH ME</a></li>
-    </ul>
-</nav>
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a href="#about-me" >ABOUT ME</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#discover-more">DISCOVER MORE</a></li>
+            <li><a href="#contact-form">GET IN TOUCH</a></li>
+            <li><a href="">WORK WITH ME</a></li>
+        </ul>
+    
+    </nav>
+    <div id="mobile-nav">
+        <DropDownNav client:idle/>
+    </div>
+</div>
 
-<style>
+<style is:global>
     .navbar {
         font-family: 'Noto sans';
         width: fit-content;
@@ -23,6 +30,9 @@
         transition: background 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 
+    }
+    #mobile-nav{
+        display: none;
     }
     #navbar.scrolled {
         /* all the code neede to turn the navbar into a black solid nav */ 
@@ -59,6 +69,42 @@
     .navbar a:hover,
     .navbar a.active {
         color: #3EA9AC;
+    }
+
+    @media screen and (max-width : 800px) {
+        #mobile-nav {
+            display: flex ;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            transition: background 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+            /* position: fixed;
+            translate: -50%;
+            left: 50%; */
+
+        }
+        #mobile-nav.scrolled{
+            background-color: #000000;
+            width: fit-content;
+            margin: auto;
+            border-radius: 20px;
+            padding: 2px 6px 2px 6px;
+            color: #ffffff;
+        }
+        #navbar {
+            display: none;
+        }
+        #navbar.scrolled {
+            display: none;
+
+        }
+        .nav-div {
+        }
+        .main-div{
+            padding-top: 30rem;
+        }
     }
 
 </style>

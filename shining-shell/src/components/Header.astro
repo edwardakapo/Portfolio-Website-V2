@@ -12,7 +12,7 @@ import Navbar from "./Navbar.astro"
             canada-based software engineer & product designer
         </h2>
         <h2 id="subtitle2">
-            canada-based SWE &  product designer
+            canada-based <br> SWE &  product designer
         </h2>
     </div>
     <div class="nav">
@@ -22,7 +22,7 @@ import Navbar from "./Navbar.astro"
 </section>
 
 
-<style>
+<style >
     #header {
         font-family: 'Noto sans';
         text-transform: uppercase;
@@ -55,7 +55,7 @@ import Navbar from "./Navbar.astro"
     #header h2 {
         font-size: 14px;
         font-weight: 600;
-        letter-spacing: calc(14px * 0.3);
+        letter-spacing: calc(14px * 0.25);
         color: #A8A8A8;
         margin: 0.8rem 0 0 0;
         transition: var(--transition-animation)
@@ -90,13 +90,14 @@ import Navbar from "./Navbar.astro"
             font-size: 60px;
             text-align: center;
             line-height: 65px;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
         }
 
         #header h2 {
             width: 90%;
             margin : auto;
             text-align: center;
+            line-height: 25px;
         }
         #subtitle {
             display: none;
@@ -107,7 +108,11 @@ import Navbar from "./Navbar.astro"
         #header.scrolled h1 {
         font-size: 0px;
         line-height: 0;
-    }
+        }
+        #header.scrolled h2 {
+        font-size: 0px;
+        line-height: 0;
+        }
     }
 </style>
 
@@ -115,6 +120,8 @@ import Navbar from "./Navbar.astro"
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header') as HTMLElement;
     const navbar = document.getElementById('navbar') as HTMLElement;
+    const mainDiv = document.getElementById('main-div') as HTMLElement;
+    const mobileNav = document.getElementById('mobile-nav') as HTMLElement;
     let isScrolled = false;
     let ticking = false;
 
@@ -122,9 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (scrolled) {
             header.classList.add('scrolled');
             navbar.classList.add('scrolled');
+            mainDiv.classList.add('scrolled');
+            mobileNav.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
             navbar.classList.remove('scrolled');
+            mainDiv.classList.remove('scrolled');
+            mobileNav.classList.remove('scrolled');
+
+
 
         }
     }

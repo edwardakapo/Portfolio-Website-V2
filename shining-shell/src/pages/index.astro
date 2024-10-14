@@ -18,7 +18,7 @@ import Header from '@/components/Header.astro'
 			position="top-center"
 		/>
 		<Header />
-		<div class="main-div">
+		<div id="main-div" class="main-div">
 			<AboutMeSection />
 			<ProjectsSection />
 			<GithubIntegration />
@@ -48,7 +48,14 @@ import Header from '@/components/Header.astro'
 		/* transition: padding-top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
 		transition: padding-top 0.4s ease;
 	}
-
+	@media screen and (max-width : 800px) {
+		.main-div{
+			padding-top:  20rem;
+		}
+		.main-div.scrolled{
+			padding-top:  12rem;
+		}
+	}
 
 
 
