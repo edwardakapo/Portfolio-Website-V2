@@ -25,13 +25,14 @@ import {
 import Typewriter from 'typewriter-effect'
 
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { dummyData } from "./dummydata";
+import { dummyData } from "../../lib/dummydata";
 import { sortProjects } from "@/lib/functions";
 const SearchIcon = <svg viewBox="0 0 24 24" className="absolute left-2 top-1/2 transform -translate-y-1/2 w-5 h-5  " fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.192"></g><g id="SVGRepo_iconCarrier"> <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
 type ProjectLinks = {
-  githubLink: string;
+  githubLink?: string;
   liveWebsite?: string;
   projectReport?: string;
+  landingPage?: string;
 }
 export interface Project {
   projectName: string;
@@ -41,6 +42,7 @@ export interface Project {
   projectScale: "personal" | "school" | "Small" | "Medium" | "Large";
   techStack: string[];
   projectStatus: "Completed" | "On Hold" | "Live Service" | "Dropped";
+  keyFeatures: {title : string , description : string}[];
   features: string[];
   links: ProjectLinks;
   projectDesc: string
