@@ -44,8 +44,8 @@ const AboutMeCarousel = ( props : AboutMeCarouselPropType) => {
                         {images.map((image, index) => (
                             <div className='embla1__slide' key={image.alt + index}>
                                 <img 
-                                    className="w-[380px] h-[580px] object-center
-                                        max-[800px]:w-[320px] max-[800px]:h-[450px]" 
+                                    className="w-[360px] h-[550px] object-center
+                                        max-[800px]:w-[320px] max-[800px]:h-[450px] object-cover" 
                                     alt={image.alt} src={image.src} loading='lazy'/>
                             </div>
                         ))}

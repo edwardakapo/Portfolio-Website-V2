@@ -4,15 +4,15 @@ import "@/styles/aboutMeCarousel.css";
 import { Icon } from 'astro-icon/components'
 const Images = [
     {
-        src: "https://images.unsplash.com/photo-1722218530128-514266124b4e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: "./Profile Pics/pic 1.jpg",
         alt: "Image of me at my desk",
     },
     {
-        src: "https://images.unsplash.com/photo-1722218531137-2220e9dc0f91?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: "./Profile Pics/pic 2.jpg",
         alt: "Image of me at my",
     },
     {
-        src: "https://images.unsplash.com/photo-1717441706871-eac9e3cd85f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8fA%3D%3D",
+        src: "./Profile Pics/pic 3.jpg",
         alt: "another picture",
     },
 ];
@@ -22,7 +22,7 @@ const Images = [
 <section id="about-me">
     <div class="">
         <div 
-            class="flex items-center mx-auto w-[780px] justify-between
+            class="flex items-center mx-auto w-[750px] justify-between
                 max-[800px]:w-[320px] max-[800px]:flex-col max-[800px]:gap-y-10">     
             <AboutMeCarousel images={Images} client:load />
             <div class="w-[320px]">
@@ -46,12 +46,15 @@ const Images = [
                 </p>
     
                 <p>
-                    You can learn more about me below, leave me a quick message, or
-                    book a quick chat with me.
+                    You can learn more about me below, leave me a 
+                    <a href="#contact-form" class="hover:text-gray-600"> <b>short message</b></a>,
+                    or
+                    <a href="https://cal.com/edward-akapo/30min" target="_blank" class="hover:text-gray-600"><b>book a chat</b></a>
+                    with me.
                 </p>
             </div>
         </div>
-        <div class="w-[780px] max-[800px]:w-[320px] max-[800px]:pt-2 mx-auto flex items-center pt-10 gap-x-3">
+        <div class="w-[750px] max-[800px]:w-[320px] max-[800px]:pt-2 mx-auto flex items-center pt-6 gap-x-3">
             <a href="https://x.com/IamEdwardAkapo" target="_blank" rel="noopener"><Icon name="twitterIcon"/></a>
             <a href="https://www.linkedin.com/in/oluwademilade-akapo/" target="_blank" rel="noopener"><Icon name="linkedInIconii"/></a>
             <a href="https://scalloped-jet-e78.notion.site/DEVLOGS-11619538ff1580bd9dcedc507b2349e2" target="_blank" rel="noopener"><Icon name="NotionIcon"/></a>
